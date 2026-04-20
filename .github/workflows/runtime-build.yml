@@ -14,8 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        submodules: recursive
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -23,7 +21,7 @@ jobs:
         dotnet-version: '10.0.x'
 
     - name: Build Runtime
-      run: dotnet publish Astrolune.Runtime.Core/Astrolune.Runtime.Core.csproj -c Release -r win-x64 --self-contained -o ./dist/win-x64
+      run: dotnet publish Astrolune.Core.csproj -c Release -r win-x64 --self-contained -o ./dist/win-x64
 
     - name: Upload Windows Runtime
       uses: actions/upload-artifact@v4
@@ -36,8 +34,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        submodules: recursive
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -45,7 +41,7 @@ jobs:
         dotnet-version: '10.0.x'
 
     - name: Build Runtime
-      run: dotnet publish Astrolune.Runtime.Core/Astrolune.Runtime.Core.csproj -c Release -r linux-x64 --self-contained -o ./dist/linux-x64
+      run: dotnet publish Astrolune.Core.csproj -c Release -r linux-x64 --self-contained -o ./dist/linux-x64
 
     - name: Upload Linux Runtime
       uses: actions/upload-artifact@v4
@@ -58,8 +54,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        submodules: recursive
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -67,10 +61,10 @@ jobs:
         dotnet-version: '10.0.x'
 
     - name: Build Runtime (x64)
-      run: dotnet publish Astrolune.Runtime.Core/Astrolune.Runtime.Core.csproj -c Release -r osx-x64 --self-contained -o ./dist/osx-x64
+      run: dotnet publish Astrolune.Core.csproj -c Release -r osx-x64 --self-contained -o ./dist/osx-x64
 
     - name: Build Runtime (arm64)
-      run: dotnet publish Astrolune.Runtime.Core/Astrolune.Runtime.Core.csproj -c Release -r osx-arm64 --self-contained -o ./dist/osx-arm64
+      run: dotnet publish Astrolune.Core.csproj -c Release -r osx-arm64 --self-contained -o ./dist/osx-arm64
 
     - name: Upload macOS Runtime
       uses: actions/upload-artifact@v4
