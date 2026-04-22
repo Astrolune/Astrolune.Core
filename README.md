@@ -113,4 +113,4 @@ git submodule add https://github.com/Astrolune/Astrolune.Core.git core
 
 ## License
 
-MIT
+Apache-2.0
