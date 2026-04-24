@@ -1,11 +1,12 @@
 using System.Collections.Concurrent;
 using System.Text.Json;
+using Astrolune.Runtime.Core.Server;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Logging;
 
 namespace Astrolune.Runtime.Core.Storage;
 
-public sealed class StateManager : IAsyncDisposable
+public sealed class StateManager : IStateManager, IAsyncDisposable
 {
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
 

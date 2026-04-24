@@ -1,11 +1,12 @@
 using System.Security.Cryptography;
 using System.Text;
+using Astrolune.Runtime.Core.Server;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Logging;
 
 namespace Astrolune.Runtime.Core.Storage;
 
-public sealed class SecureStorage : IAsyncDisposable
+public sealed class SecureStorage : ISecureStorage, IAsyncDisposable
 {
     private readonly string _dbPath;
     private readonly ILogger<SecureStorage> _logger;
